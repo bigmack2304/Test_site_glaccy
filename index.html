@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style_index.css">
+
+    <script src="scripts/s_index_korzina.js"></script>
+	<script src="scripts/s_index_butons.js"></script>
+    <script src="scripts/s_index.js"></script>
+    <title>Проект</title>
+</head>
+
+<body onload="start()">
+
+    <nav class="nav_top_left">
+        <a href="#">
+            <img class="nav_top_left_logo" src="img/svg/logo.svg" alt="logo">
+        </a>
+
+        <ul class="left_left_menu">
+            <li>
+                <button class="btn_katalog" onclick="btn_katalog()" type="button">Каталог</button>
+            </li>
+            <li>
+                <button type="button">Доставка и оплата</button>
+            </li>
+            <li>
+                <button type="button">О Компании</button>
+            </li>
+        </ul>
+
+        <ul class="left_right_menu">
+            <li>
+                <button type="button" class="btn_find" onclick="btn_find()">
+                   <svg class="icon_naw" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17">
+                        <path
+                            d="M16.958 15.527L11.75 10.32A6.455 6.455 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13a6.465 6.465 0 0 0 3.839-1.263l5.205 5.204 1.414-1.414zM6.5 11C4.019 11 2 8.981 2 6.5S4.019 2 6.5 2 11 4.019 11 6.5 8.981 11 6.5 11z" />
+                    </svg> 
+                </button>
+            </li>
+            <li>
+                <button type="button" class="btn_vhod" onclick="btn_vhod()">
+                    <svg class="icon_naw" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 21 19">
+                        <g>
+                            <path d="M6 14.875L12.917 9.5 6 4.125v2.917H-.042v4.917H6z" />
+                            <path
+                                d="M18 0H5C3.9 0 3 .9 3 2v2h2V2h13v15H5v-2H3v2c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2z" />
+                        </g>
+                    </svg>
+                    Вход
+                </button>
+            </li>
+            <li>
+                <button type="button" class="btn_korzina" onclick="btn_korzina()">
+                    <svg class="icon_naw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20">
+                        <g>
+                            <path
+                                d="M5.657 2.031L5.422 0H0v2h3.64l1.5 13h13.988l1.699-12.969H5.657zM17.372 13H6.922L5.888 4.031h12.66L17.372 13z" />
+                            <circle cx="6.984" cy="18" r="2" />
+                            <circle cx="15.984" cy="18" r="2" />
+                        </g>
+                    </svg>
+                    <span class="btn_korzina_txt">Пусто</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+
+        <p class="head_info">С 10 до 20, ежедневно<br>
+            <span class="call_number">8 812 450-25-25</span>
+        </p>
+
+            <div class="head_fon">
+
+                <ul class="img_fon">
+                    <li>
+                        <h1 class="img_fon_li">Крем-брюле и пломбир с малиновым джемом</h1>
+                    </li>
+                    <li>
+                        <h1 class="img_fon_li">Шоколадный пломбир и лимонный сорбет</h1>
+                    </li>
+                    <li>
+                        <h1 class="img_fon_li">Пломбир с помадкой и клубничный щербет</h1>
+                    </li>
+                </ul>
+            
+            </div>
+
+    </header>
+
+    <main>
+
+        <form class="fon_type_btn">
+            <input type="radio" name="fon_type" value="1" checked onclick="upd_fon()">
+            <input type="radio" name="fon_type" value="2" onclick="upd_fon()">
+            <input type="radio" name="fon_type" value="3" onclick="upd_fon()">
+        </form>
+
+        <button class="fon_type_btn2 button_base" type="button" onclick="btn_day_oba()">Давайте оба!</button>
+
+        <div class="main_banners">
+            <section class="banner_left">
+                <h2>Малинка даром!</h2>
+                <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья
+                    бесплатно.</p>
+                <button class="button_base" type="button">Хочу варенье!</button>
+            </section>
+
+            <section class="banner_right">
+                <h2>Шоколадки даром!</h2>
+                <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно
+                    бесплатно.</p>
+                <button class="button_base" type="button">Хочу шоколадки!</button>
+            </section>
+        </div>
+
+        <div class="hits">
+            <ul>
+                <li class="hits_item" onclick="m_korzina_add(0)">
+                    <img class="icon_hit" src="img/svg/hit.svg" alt="стикер хит">
+                    <img class="icon_hit_logo" src="img/item_1.png" alt="лого хита">
+                    <p><span class="hit_cost">310</span><span class="cost_symbol">₽</span>/кг</p>
+                    <a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+                </li>
+                <li class="hits_item" onclick="m_korzina_add(1)"> 
+                    <img class="icon_hit" src="img/svg/hit.svg" alt="стикер хит">
+                    <img class="icon_hit_logo" src="img/item_2.png" alt="лого хита">
+                    <p><span class="hit_cost">380</span><span class="cost_symbol">₽</span>/кг</p>
+                    <a href="#">Сливочно-кофейное с кусочками шоколада</a>
+                </li>
+                <li class="hits_item" onclick="m_korzina_add(2)">
+                    <img class="icon_hit"src="img/svg/hit.svg" alt="стикер хит">
+                    <img class="icon_hit_logo" src="img/item_3.png" alt="лого хита">
+                    <p><span class="hit_cost">355</span><span class="cost_symbol">₽</span>/кг</p>
+                    <a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
+                </li>
+                <li class="hits_item" onclick="m_korzina_add(3)">
+                    <img class="icon_hit" src="img/svg/hit.svg" alt="стикер хит">
+                    <img class="icon_hit_logo" src="img/item_4.png" alt="лого хита">
+                    <p><span class="hit_cost">415</span><span class="cost_symbol">₽</span>/кг</p>
+                    <a href="#">Сливочное крем-брюле с карамельной подливкой</a>
+                </li>
+            </ul>
+            
+        </div>
+
+        <div class="seo">
+            <h2>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес
+            </h2>
+
+            <section class="seo_obj">
+                <img src="img/svg/ice-cream.svg" alt="иконка мороженого">
+                <p>Все наше мороженое изготавливается на собственном производстве, с использованием современного
+                    оборудования и проверенных временем технологий.</p>
+            </section>
+            <section class="seo_obj">
+                <img src="img/svg/cow.svg" alt="иконка коровы">
+                <p>Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас
+                    связывает долговременное сотрудничество.</p>
+            </section>
+            <section class="seo_obj">
+                <img src="img/svg/eco.svg" alt="иконка листика">
+                <p>Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все
+                    дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</p>
+            </section>
+            <section class="seo_obj">
+                <img src="img/svg/thermometer.svg" alt="иконка градусника">
+                <p>Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает
+                    мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
+            </section>
+
+        </div>
+
+        <div class="news_and_spam">
+            <section class="news">
+                <p>Новое в нашем блоге</p>
+                <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
+            </section>
+
+            <section class="spam_fon">
+                <section class="spam">
+                    <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас
+                        происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+
+                    <form action="#">
+                        <input class="spam_fon_input" type="email" name="email" value="" placeholder="email@example.com" required>
+                        <button class="spam_form_btn button_base" type="submit">Отправить</button>
+                    </form>
+                </section>
+            </section>
+        </div>
+
+        <div class="container_map">
+            <div class="map">
+               <!-- <img class="map_map" src="img/map_adress.png" alt="карта">-->
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.82670817199542!2d30.322604858557646!3d59.93855258065988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46963149d89a8e0b%3A0x4947592a0feb4c10!2sEZO%20Izakaya!5e0!3m2!1sru!2sru!4v1640770093163!5m2!1sru!2sru"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+
+            </div>
+            <div class="map_addrerss">
+                <p>Адрес главного офиса<br>
+                и офлайн-магазина:</p>
+
+                <address>ул. Большая Конюшенная<br>
+                19/8, Санкт-Петербург</address>
+
+                <p>Для заказов по телефону:<br>
+                <span>8 812 450-25-25</span><br>
+                (с 10 до 20 ежедневно)</p>
+
+                <button class="button_base" type="button">Форма обратной связи</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <section class="seti">
+            <ul>
+                <li><a href="#"><img src="img/svg/twitter.svg" alt="twitter"></a></li>
+                <li><a href="#"><img src="img/svg/instagram.svg" alt="instogram"></a></li>
+                <li><a href="#"><img src="img/svg/fb.svg" alt="facebook"></a></li>
+                <li><a href="#"><img src="img/svg/vk.svg" alt="vc"></a></li>
+            </ul>
+        </section>
+
+        <section class="menu">
+            <ul>
+                <li>
+                    <a class="obj_menu_a" href="#">Для поставщиков</a>
+                    <div class="menu_icon"></div>
+                </li>
+                <li>
+                    <a class="obj_menu_a" href="#">Наши документы</a>
+                    <div class="menu_icon"></div>
+                </li>
+                <li>
+                    <a class="obj_menu_a" href="#">О производстве</a>
+                    <div class="menu_icon"></div>
+                </li>
+                <li>
+                    <a class="obj_menu_a" href="#">Экологические стандарты</a>
+                    <div class="menu_icon"></div>
+                </li>
+            </ul>
+        </section>
+
+        <!--onmouseout="menu_icon_upd()" onmouseover="menu_icon_upd()"-->
+        <section class="made_in">
+            <img src="img/svg/logo-htmlacademy.svg" alt="htmlA">
+            <p>Сделано в <a href="#">HTML Academy</a> © 2019</p>
+        </section>
+    </footer>
+
+
+
+    <div class="modal_find">
+        <form action="" method="post">
+            <input class="base_modal_input" type="text" placeholder="крем брюле"/>
+        </form>
+    </div>
+
+    <div class="modal_vhod">
+        <form action="" method="post">
+            <input class="base_modal_input" type="email" placeholder="email@example.com" required/>
+            <input class="base_modal_input" type="password" placeholder="********" required/>
+            <button type="submit" class="button_base">Войти</button>
+            <div class="modal_vhod_alt">
+                <a href="#">Забыли пароль ?</a>
+                <a href="#">Новая регистрация</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal_korzina">
+        <div class="modal_korzina_container">
+           <!-- <div class="korzina_item">
+                <button class="corz_close_item"  onclick="btn_korz_item_del()" type="button"></button>
+                <img class="corz_image" src="" alt="">
+                <p class="corz_item_desc">Клубничный пломбир с присыпкой из белого шоколада</p>
+                <p>
+                    <span class="corz_item_widh">1.5</span> кг х <span class="corz_item_cost_kg">300</span> руб.
+                </p>
+                <p>
+                    <span class="corz_item_sum">450</span> руб.
+                </p>
+            </div>  -->
+        </div>
+
+        <hr>
+        <div class="modal_korzina_container_foter">
+            <p class="korz_itog">Итого <span class="korz_items_sum">0</span> руб.</p>
+            <button class="korz_by_zakaz button_base" type="button">Оформить заказ</button>
+        </div>
+    </div>
+
+    <div class="modal_katalog">
+        <p>Новинки</p>
+        <hr>
+        <div>
+            <a href="#">Сливочное</a>
+            <a href="#">Щербеты</a>
+            <a href="#">Фруктовый лед</a>
+            <a href="#">Мелорин</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

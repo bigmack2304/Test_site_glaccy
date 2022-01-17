@@ -1,0 +1,1025 @@
+/* ------------аниации-------------------------------------- */
+
+@keyframes move_r {
+    0% {
+        transform: translateX(600px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes move_l {
+    0% {
+        transform: translateX(-600px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/*--------------------------------------------------------------------*/
+
+@keyframes fon_move_start {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-1100px);
+    }
+}
+
+@keyframes fon_move_end {
+    0% {
+        transform: translateX(1100px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+
+/*-------------базовые стили-----------------------------*/
+
+.button_base {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: inherit;
+    text-align: center;
+    text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
+    border-radius: 50px;
+    border-style: none;
+    background-image: linear-gradient( 360deg , rgb(231,74,53) 0%, rgb(242,104,67) 100%); 
+    box-shadow: 0px 1px 3px 0px #6e6e6e;
+}
+
+.button_base:hover {
+    box-shadow: 0px 2px 1px 0px rgb(172 16 0);
+    background-image: linear-gradient( 360deg, rgb(237 112 94) 0%, rgb(245,134,105) 100%);
+}
+
+.button_base:active {
+    background-image: linear-gradient( 180deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+    box-shadow: inset 0px 1px 3px 0px rgb(149, 39, 24);
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/*-------------тело саита------------------------------------------------*/
+body {
+    box-sizing: border-box;
+    background-color: rgb(133, 158, 144);     /* цвет фона (устанавливается скриптом) */
+    background-repeat: no-repeat;               /* отключить повторения */
+    background-size: contain;                   /* растянуть изображение в размер экрана, сохранять пропорции при изменении разрешения */
+    margin: 0;                            /* отступы снаружи */
+    padding: 0;                           /* отступы внутри */
+    font-size: 10px;                      /* базовый размер шрифта */
+    font-family: 'Roboto', sans-serif;    /* базовый шрифт */
+    min-width: 830px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    transition: all 0.40s ease-out;
+}
+
+/*-------------навигационный блок-------------------------------------------------*/
+
+.nav_top_left {                    /* область с менюшкой */
+    overflow: hidden;              /* скрывать все что выйдет за этот блок */
+    display: block;                /* сделать блочним(во всю ширину дисплея) */
+    height: 80px;                  /* высота */
+    position: relative;            /* позиционирование относительно себя */
+}
+
+/*---------------ссылка с картинкой (интро)-----------------------------------------------*/
+
+.nav_top_left a {               /* ccылка с картинкой*/
+    position: absolute;         /* позиционирование относительно родителя */
+    display: block;             /* ссылка это строчный элемент(делаем ее блочным) */
+    max-width: 155px;           /* максимальная ширина */
+    height: auto;               /* высота авто */
+    top: 9px;                   /* позиционирование сверху */
+    left: 27px;                 /* позиционирование с лева */
+}
+
+.nav_top_left_logo {            /* картинка в ссылке*/
+    width: 100%;                /* ширина 100% от ширины родителя(ссылки а) */
+    height: auto;               /* высота авто */
+} 
+
+
+/*-----------области с кнопками в навигации---------------------------------------------------*/
+
+.left_left_menu, .left_right_menu {
+    position: absolute;         /* позиционирование относительно родителя */
+    display: inline-block;      /* сделать списки блочными-с возможностью записи в строку(для того чтобы они шли в линию) */
+    list-style-type: none;      /* убрать точки скраю */
+    padding: 0px;               /* убрать отступы */
+    margin: 0px;
+    top: 22px;                  /* позиционирование с верху */
+}
+
+/* блок кнопок слева */
+.left_left_menu {
+    left: 180px;            /* позиционирование слева */
+}
+
+/* блок кнопок с права */
+.left_right_menu {
+    right: 17px;            /* позиционирование справа */
+}
+
+/*-------------------элементы области-------------------------------------------*/
+
+.left_left_menu li, .left_right_menu li {
+    display: inline-block;      /* списки выравнены, теперь выравниваем элементы списка */
+}
+
+/*-------------кнопки в навигации слева-------------------------------------------------*/
+
+.left_left_menu li button {
+    font-family: 'Roboto', sans-serif;          /* тип шрифта */
+    font-size: 1.6em;                           /* размер шрифта(относительно тела) */
+    font-weight: bold;                          /* жирность шрифта */
+    border-style: none;                         /* контур(обводка) */
+    padding: 8px 14px;                           /* внутренние отступы (по вертикали)(по горизонтали) */
+    margin: 0px;                                /* внешние отступы */
+    background-color: rgba(0, 0, 0, 0);       /* цвет фона rgba */
+    color: white;                             /* цвет текста */
+    margin-left: 10px;                          /* внешний отступ слева */
+    transition: all 0.15s ease-out;
+}
+
+/* кнопки слева при наведении курсора */
+.left_left_menu li button:hover {
+    background-color: white;
+    color: rgb(50, 50, 50); 
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+/* кнопки слева при наведении курсора */
+.left_left_menu li button:active {
+    background-color: white;
+    color: rgb(50, 50, 50); 
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: inset 0px 1px 3px 0px rgb(50, 50, 50);
+}
+
+/*-------------кнопки в навигации справа-------------------------------------------------*/
+
+.left_right_menu li button {
+    font-family: 'Roboto', sans-serif;      /* тип шрифта */
+    font-weight: normal;                    /* жирность шрифта */
+    color: white;                         /* цвет текста */
+    font-size: 1.4em;                        /* размер шрифта */
+    background-color: rgba(255, 255, 255, 0.2); /* цвет фона (р г б Альфа) */
+    border-style: none;         /* обводка */
+    padding: 5px 10px;          /* внутринние отступы (сверху и снизу) (слева и с права) */
+    margin: 0px;                /* все наружние отступы */
+    margin-right: 10px;         /* наружний отступ с права */
+    border-radius: 50px;        /* скругление краев */
+    transition: all 0.2s ease-out;  /* для плавности между переходами */
+}
+
+/* этот параметр задаятся только для кнопки в ПЕРВОМ листе списка(т.е для поиска) */
+.left_right_menu li:first-child button {
+    padding: 5px;               /* отступ снутри */
+}
+
+/* иконка внутри кнопки */
+.left_right_menu li button .icon_naw {
+    width: 19px;        /* ширина */
+    height: 19px;       /* высота */
+    padding: 0px;       /* отступ снутри */
+    margin: 0px;        /* отступ снаружи */
+    vertical-align: bottom;     /* выравнивание по вертикали */
+    transition: all 0.2s ease-out;  /* для плавности между переходами */
+    opacity: 100%;  /* непрозрачность элемента */
+    fill: white;
+}
+
+/* при наведении на кнопку */
+.left_right_menu li button:hover {
+    background-color: rgba(255, 255, 255, 1.0);
+    color:rgb(50, 50, 50);
+}
+
+/* при наведении на кнопку, для его свгшки */
+/* можно былобы попробовать прописать в свг класс для картинки и подключить туда стильи, возможно
+но тк она чернобелая я просто применил фильтр инверсии цветов а оттенок серости реализовал
+уменьшением непрозрачности */
+.left_right_menu li button:hover .icon_naw{
+   fill: rgb(50, 50, 50);
+}
+
+/*------------------весь заголовок--------------------------------------------*/
+
+header {
+    height: 510px;
+    position: relative;
+}
+
+/*-----------------------контентная область---------------------------------------*/
+
+main {
+    margin: 0px auto;       /* выравнивание этой области по центру экрана */
+    width: 90%;             /* ширина области 90% от размера внешнего контейнера */
+}
+
+/*------------------график работы и телефон--------------------------------------------*/
+
+.head_info {
+    position: relative;     /* режим позиционирования - относительно начального расположения */
+    margin: 0px;            /* внешние отступы */
+    margin-right: 27px;     /* отступ с права */
+    top: -8px;              /* сдвиг блока с верху */
+    text-align: right;      /* выравнивание текста */
+    font-size: 1.4em;       /* размер шрифта */
+    color: white;         /* цвет шрифта */
+    line-height: 16px;      /* межстрочный отступ */
+}
+
+/* номер телефона */
+.head_info .call_number{
+    font-size: 1.57em;      /* размер шрифта */
+    line-height: 24px;      /* межстрочный отступ */
+  }
+  
+/*----------------фоновая картинка и ее текст----------------------------------------------*/
+
+.head_fon {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 854px;
+    top: -120px;
+    z-index: -1000;
+}
+
+.img_fon {
+    position: relative;
+    margin: 0px auto;
+    padding: 0px;
+    top: 383px;
+    width: 700px;
+}
+
+.img_fon li h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.img_fon li {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;          /* убрать точки скраю */
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 20px #878787;
+}
+
+/*-------------------кнопка-------------------------------------------*/
+
+.fon_type_btn2 {
+    position: relative;
+    bottom: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 3.2em;
+    padding: 10px 30px;
+}
+
+/*-----------------------баннеры---------------------------------------*/
+/*блок баннеров*/
+.main_banners {
+    display: flex;                   /* этот блок будет flex-боксом  */
+    overflow: hidden;                /* все что выйдет за его края скрывается */
+    justify-content:space-between;   /* выравнивание элементов - равномерное по всей оси direction, и одинаковым расстоянием между элементами */
+    align-items:flex-start;          /* выравнивание внутренних элементов */
+    gap: 27px;
+    flex-wrap: wrap;
+}
+
+/*элементы блока баннеров*/
+.banner_left,
+.banner_right {
+    border-radius: 20px;                        /* скругление краев */
+    max-width: 580px;                           /* максимальная ширина блока */
+    min-height: 230px;                          /* минимальная высота блока */
+    font-family: inherit;                       /* тип */
+    color: white;                             /* цвет шрифта */
+    font-size: 1.8em;                           /* размер шрифта */
+    text-shadow: 0px 0px 20px #000000;        /* добавлю тень тексту, чтоб было лучше видно */
+    padding: 20px 20px;                         /* внутренний отступ от края */
+    display: flex;                              /* этот блок будет тоже flex-боксом */
+    flex-direction:column;                      /* расположение элементов - вертикальное */
+    justify-content:space-between;              /* выравнивание элементов - равномерное по всей оси direction */
+    align-self: stretch;                        /* высота блоков одинаковая */
+    flex-basis: 48%;
+}
+
+.banner_left {
+    background: url(../img/banner_malina.png);  /* установить фон для блока */
+    background-size: cover;                     /* режим наложения фоновой картинки */
+}
+
+.banner_right {
+    background: url(../img/banner_shokolad.png);
+    background-size: cover;                     /* режим наложения фоновой картинки */
+}
+
+/* зоголовки в элементах */
+.banner_left h2, 
+.banner_right h2 {
+    font-size: 1.78em;      /* размер шрифта */
+    padding: 0px;           /* отступы внутри и снаружи */
+    margin: 0px;
+}
+
+/* кнопки в элементах */
+.banner_left button,
+.banner_right button {
+    padding: 15px 24px;             /* внутренние отступы - вертикаль, горизонталь */
+    font-size: 1.0em;               /* размер шрифта */
+    align-self: flex-end;           /* выравнивание в flex-боксе - в конце */
+    box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
+}
+
+
+/*--------------------блок с хитами------------------------------------------*/
+/* весь блок */
+/*.hits {
+ /*   display: flex;              /* этот блок будет flex-боксом  */
+ /*   flex-direction: column;     /* расположение внутренних элементов (колонки) */
+/*}*/
+
+/* список элементов */
+.hits ul {
+    display: flex;                  /* этот блок будет flex-боксом  */   
+    flex-direction: row;            /* расположение внутренних элемепнтов, в строку */
+    justify-content: space-between; /* выравнивание элементов вдоль основной оси */
+    flex-wrap: wrap;
+    margin: 0px;                    /* внешние отступы */
+    padding: 0px;                   /* внутренние отступы */
+    gap: 10px;
+}
+
+/* каждый элемент списка */
+.hits_item {
+    display: flex;                  /* этот блок будет flex-боксом  */  
+    flex-direction: column;         /* расположение элементов колонками */
+    list-style-type: none;          /* убрать точку с боку */
+    position: relative;             /* позиционирование, относительно самого себя */
+    flex-grow: 0;                   /* запрет на расширение по горизонтали */
+    flex-shrink:1;                  /* разрешение элементу сужатся */
+    flex-basis: 23%;                /* размер внутренних элементов */
+    margin: 0px;       /* внешние отступы (верх.право.низ.лево)*/
+    color: white;                 /* цвет шрифта */
+    max-width: 300px;               /* максимальная ширина */
+    margin-top: 40px;
+    padding: 5px;
+}
+
+.hits_item:hover {
+    background-color: rgba(255, 255, 255, 0.144);
+    border-radius: 5px;
+}
+
+.hits_item:first-child {
+   /* margin: 0px;                    /* отступ для первого элемента списка */
+    margin-top: 40px;
+}
+
+/* картинка мороженого */
+.hits_item .icon_hit_logo {
+    height: auto;                   /* высота авто */
+    width: 100%;                    /* ширина 100% свободного места */
+}
+
+/* стикер хит */
+.hits_item .icon_hit {
+    position: absolute;             /* позиционирование - относительно hits_item */
+    height: auto;                   /* высота авто */
+    width: 25%;                     /* ширина 25% свободного места */
+}
+
+/* ценник */
+.hits_item p {
+    position: absolute;             /* позиционирование - относительно hits_item */      
+    bottom: 30%;                    /* сдвиг от низа */
+    margin: 0px;                    /* внешние отступы */
+    padding: 0px;                   /* внутренние отступы */
+    font-size: 3em;                 /* размер шрифта */
+    text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.93);   /* тень под текстом */
+    font-family: "Roboto";          /* тип шрифта */
+    font-weight: normal;            /* жирность шрифта */
+}
+
+/* цыфры в ценнике и значок рубля */ 
+.hits_item p .hit_cost, .hits_item p .cost_symbol {
+    font-size: 1.4em;               /* размер шрифта */
+    font-weight: bold;              /* жирность шрифта */
+}
+
+/* ссылка - подпись под картинкой */
+.hits_item a {
+    color: inherit;                 /* цвет шрифта (наследовать от радителей) */
+    font-family: inherit;           /* и тип шрифта */
+    font-size: 1.4em;               /* размер шрифта */
+    text-align: center;             /* выравнивание текста */
+    font-weight: normal;            /* жирность текста */
+    line-height: 22px;              /* межстрочный отступ */
+    margin-top: 5px;                /* отступ с верху */
+    transition: all 0.2s ease-out;  /* для плавности между переходами */
+}
+
+/* кнопки слева при наведении курсора */
+.hits_item a:hover {
+    color: rgb(255, 188, 158);          /* цвет текста */
+    border-color: rgb(255, 188, 158);   /* цвет обводки */
+}
+
+
+/*-------------------блок сео-------------------------------------------*/
+
+.seo {
+    border-radius: 10px;                    /* скругление краев блока */
+    background: url(../img/seo_fon.png);    /* фоновое изображение */
+    display: flex;                          /* этот блок будет flex-боксом */
+    flex-wrap:wrap;                         /* чтобы блоки могли перемещатся на следующие строки */
+    margin: 0px auto;                       /* сброс внешних отступов и выравнивание в центре */
+    padding: 0px;                           /* сброс внутренних отступов */
+    color: rgb(50, 50, 50);               /* цвет для шрифта */
+    min-height: 100px;                      /* минимальная высота для этого блока */
+    margin-top: 37px;                       /* отступ с верху */
+}
+
+/* заголовок */
+.seo h2 {                           
+    flex: 0 1 100%;                 /* [можно-ли блоку увеличиватся по ширене] [можноли элементу сжиматся] [ширина элемента - 100% от ширины родителя ] */
+    margin: 0px;                    /* внешние отступы */
+    padding: 0px 20px;              /* внутренние отступы (по вертикали, по горизонтали) */
+    padding-top: 20px;              /* внутренний отступ с верху */
+    padding-bottom: 10px;           /* внутренний отступ с низу */
+    font-size: 2.4em;               /* размер шрифта */
+    line-height: 30px;              /* межстрочный отступ */
+}
+
+/* внутренние блоки */
+.seo_obj {
+    flex: 0 1 50%;                  /* [можно-ли блоку увеличиватся по ширене] [можноли элементу сжиматся] [ширина элемента - 50% от ширины родителя ] */
+    padding: 0px 20px;              /* внутренние отступы (по вертикали, по горизонтали) */
+    padding-bottom: 10px;           /* внутренний отступ с низу */
+    display: flex;                  /* эти блоки бутут flex-боксами */
+    align-items: flex-start;        /* выравнивание обьектов в нутри бокса */
+    font-size: 1.6em;               /* размер шрифта */
+    line-height: 22px;              /* межстрочный отступ */
+}
+
+.seo_obj img {
+    width: 49px;                    /* ширина картинки */
+    height: 49px;                   /* высота картинки */
+    margin-right: 5px ;             /* внешний отступ с права */
+}
+
+/*-------------------новости-------------------------------------------*/
+
+.news_and_spam {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 27px;
+    /*margin-top: 20px;*/
+    flex-wrap: wrap;
+}
+
+.news, 
+.spam_fon {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+   /* flex: 0 1 50%;*/
+    flex-basis: 48%;
+    margin: 20px 0px 0px 0px;
+    padding: 8px;
+    border-radius: 20px;
+    max-width: 580px;
+    min-height: 230px;
+} 
+
+.news {
+    background-color: white;
+    background: url(../img/klubnika_fon.jpg);
+    background-size: cover;
+    padding: 18px 18px;
+    padding-right: 15%;
+} 
+.news p {
+    margin: 0px;
+    padding: 0px;
+    color: rgb(50, 50, 50);
+    line-height: 30px;
+    font-size: 1.6em;
+}
+
+.news a {
+    margin: 0px;
+    padding: 0px;
+    color: rgb(50, 50, 50);
+    line-height: 26px;
+    font-size: 2.4em;
+}
+
+.spam_fon {
+    background-image: url(../img/svg/bg-post.svg);
+    background-size: cover;
+}
+
+.spam {
+    padding: 10px 18px 10px 18px;
+    background-color: #f8f7f4;
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.spam p, 
+.spam a {
+    margin: 0px;
+    padding: 0px;
+    color: rgb(50, 50, 50);
+    font-size: 1.6em;
+    line-height: 22px;
+}
+
+
+.spam_form_btn {
+    margin-left: 2%;
+    padding: 8px 15px;
+    font-size: 1.6em;
+}
+
+.spam_fon_input {
+    width: 55%;
+    max-width: 300px;
+    padding: 8px;
+    font-size: 1.3em;
+}
+
+/*-----------------блок с картой---------------------------------------------*/
+
+.container_map {
+    position: relative;
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.map {
+    position: relative;
+    width: 111.55%;
+    left: -6%;
+    background-image: url(../img/map_adress.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+	background-position-x: left;
+    height: 430px;
+}
+
+.map_addrerss {
+    margin: 0px;
+    padding: 20px;
+    background-color: #f8f7f4;
+    max-width: 300px;
+    position: absolute;
+    right: 0px;
+    border-radius: 20px;
+    box-shadow: 0px 1px 16px 4px #444343;
+}
+
+.map_addrerss p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.4em;
+    color: rgb(50, 50, 50);
+    line-height: 20px;
+}
+  
+.map_addrerss address {
+    color: rgb(50, 50, 50);
+    font-size: 1.8em;
+    line-height: 24px;
+    font-weight: bold;
+    font-style: normal;
+    padding-bottom: 25px;
+}
+
+.map_addrerss p span{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.map_addrerss button {
+    margin-top: 25px;
+    align-self: center;
+    font-size: 1.8em;
+    padding: 13px 22px;
+}
+
+
+/*-------------------нижняя часть страницы-------------------------------------------*/
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px auto;
+    margin-top: 27px;
+    width: 90%;
+    min-height: 80px;
+}
+
+/* 3 внутренних блока */
+.seti, .menu, .made_in {
+    flex-basis: 25%;
+}
+
+/* блок соц сетей */
+.seti ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 220px;
+}
+
+.seti ul li {
+    list-style-type: none;      /* убрать точки скраю */
+    margin: 0px;
+    padding: 0px;
+}
+
+.seti ul li a img {
+    width: 38px;
+    height: 38px;
+    opacity: 60%;
+    transition: all 0.15s ease-out;
+}
+
+.seti ul li a img:hover {
+    opacity: 100%;
+}
+
+/* блок доп-информации */
+.menu ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu {
+    flex-basis: 32%;
+}
+
+.menu ul li {
+    list-style-type: none;      /* убрать точки скраю */
+    margin: 0px;
+    padding: 0px;
+    flex-basis: 50%;
+    margin-bottom: 8px;
+    padding-right: 18px;
+    position: relative;
+}
+
+.menu ul li a {
+    color: white;
+    font-size: 1.2em;
+    line-height: 14px;
+    font-weight: normal;
+}
+
+
+.menu_icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url(../img/svg/serdse.svg);
+    background-repeat: no-repeat;
+    left: -20px;
+    top: 0px;
+    /*display: none;*/
+    opacity: 0;
+    transition: all 0.10s ease-out;
+}
+
+.menu ul li a:hover + .menu_icon {
+    opacity: 1;
+}
+
+.menu ul li a:hover {
+    font-weight: bold; 
+}
+
+/* блок авторов */
+.made_in {
+    padding-left: 6%;
+}
+
+.made_in img {                           /* иконка чтмл академии */
+    width: 108px;
+    height: auto;
+}
+
+.made_in p {
+    color: white;
+    font-size: 1.2em;
+    line-height: 18px;
+    font-weight: normal;
+    margin: 0px;
+}
+
+.made_in p a {
+    color: white;
+}
+
+
+
+/*--------------------------------------------------------------*/
+/*--------------------------------------------------------------*/
+/*--------------------------------------------------------------*/
+/*---модальные окна-----------------------------------------------------------*/
+/*-----поиск---------------------------------------------------------*/
+
+.modal_find {
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    box-shadow: 0px 11px 11px 3px #4443437d;
+    width: 250px;
+    padding: 10px;
+    position: fixed;
+    top: 57px;
+    right: 206px;
+    display: none;
+}
+
+.base_modal_input  {
+    font-size: 1.2em;
+    line-height: 0px;
+    font-weight: normal;
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+    border-color: #cdcdcd;
+    border-style: double;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+/*-----вход---------------------------------------------------------*/
+
+.modal_vhod {
+    width: 250px;
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    box-shadow: 0px 11px 11px 3px #4443437d;
+    padding: 10px;
+    position: fixed;
+    top: 57px;
+    right: 120px;
+    display: none;
+}
+
+.modal_vhod form {
+    position: relative;
+}
+
+.modal_vhod form input:first-child {
+    margin-bottom: 10px;
+}
+
+.modal_vhod form button {
+    padding: 11px 16px;
+    font-size: 1.4em;
+    margin-top: 16px;
+}
+
+.modal_vhod_alt a {
+    color: black;
+    font-size: 1.1em;
+    line-height: 19px;
+}
+
+.modal_vhod_alt {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 107px;
+    bottom: 1px;
+    right: 10px;
+}
+
+
+
+/*---------корзина-----------------------------------------------------*/
+
+.modal_korzina {                               /* окно корзины */
+    width: 480px;                                   /* фиксированная ширина */
+    border-radius: 5px;                             /* скруглить края */
+    background-color: #f1f1f1;                    /* цвет фона */
+    box-shadow: 0px 11px 11px 3px #4443437d;      /* тень */
+    padding: 10px;                                  /* внутренний отступ */
+    padding-bottom: 16px;
+    position: fixed;                                /* позиционирование (фиксированое на экране) */
+    top: 57px;                                      /* сдвиг от верха */
+    right: 26px;                                    /* сдвиг от права */
+    display: none;                                  /* рендеринг выкл */
+    animation-name: none;                           /* анимация выкл (включается скриптом) */
+}
+
+.korz_itog {
+    font-size: 1.5em;
+    font-weight: bold;
+    color:rgb(50, 50, 50); 
+    margin: 12px 0px;
+}
+
+.korz_by_zakaz {
+    font-size: 1.8em;
+    padding: 10px 18px;
+}
+
+.modal_korzina_container_foter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.modal_korzina_container {                  /* контеинер для товаров */
+    max-height: 300px;                          /* максимальная ширина */
+    overflow: auto;                             /* если контент выйдет за границы, включить скролл */
+}
+
+.korzina_item {                             /* обертка для товара */
+    display: flex;                              /* флекс контеинер */
+    flex-direction: row;                        /* направление элементов, горизонтальное */  
+    align-items: center;                        /* выравнить элементы по центру */
+    justify-content: space-between;             /* распределение элементов в контеинере */
+    margin-bottom: 5px;                         /* внешний отступ с низу */
+    font-size: 1.3em;
+    line-height: 16px;
+    color:rgb(50, 50, 50);    
+}
+
+.corz_item_cost_kg {
+    color:rgb(145, 145, 145);
+}
+
+.corz_image {                               /* иконка товара */
+    width: 35px;                                /* фиксированная ширина */
+    height: 35px;                               /* фиксированная высота */
+    border-radius: 50px;                        /* скругление краев */
+}
+
+.corz_item_desc {                           /* описание товара */
+    width: 175px;                               /* фиксированная ширина */
+    margin: 0;                                  /* внешние отступы */
+}
+
+.modal_korzina hr {                         /* линия, отделяющая список товаров */
+    background-color: #dfdfdf;                /* цвет ее фона */
+    height: 2px;                                /* высота */
+    border: none;                               /* контур скрыть */
+    margin: 0;                                  /* внешние отступы */
+}
+
+.corz_close_item {                          /* кнопка удаления товара из корзины */
+    border:none;                                /* отключить контур */
+    background-color: inherit;                  /* цвет фона, как у родителя */
+    background-image: url(../img/svg/Х.svg);    /* фоновая картинка */
+    background-repeat: no-repeat;               /* отключить повторения картинки */
+    background-position: center;                /* позиционировать фоновую картинку по центру */
+    background-size: contain;                   /* размер картинки (растянуть в размер окна) */
+    width: 11px;                                /* ширина */
+    height: 11px;                               /* высота */
+    flex-basis: 25px;                           /* выделяемый размер во flex пространстве */
+    transition: all 0.10s ease-out;             /* анимация для перехода между состояниями */
+}
+
+.corz_close_item:hover {                    /* наведение курсора на кнопку */
+    width: 15px;                                /* ширина */
+    height: 15px;                               /* высота */
+}
+
+/*------каталог--------------------------------------------------------*/
+
+.modal_katalog {
+    width: 158px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    box-shadow: 0px 11px 11px 3px #4443437d;
+    padding: 10px;
+    font-size: 1.2em;
+    position: fixed;
+    overflow: hidden;
+    top: 61px;
+    left: 179px;
+    display: none;
+}
+
+.modal_katalog p {
+    margin: 0 0 0px 15px;
+    font-weight: bold;
+    cursor: default;
+}
+
+.modal_katalog hr {
+    background-color: #dfdfdf;
+    height: 2px;
+    border: none;
+    margin: 10px 0px;
+}
+
+.modal_katalog div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: -10px;
+    width: 200px;
+}
+
+.modal_katalog div a {
+    margin: 0;
+    padding: 10px 0 10px 23px;
+    text-decoration: none;
+    color: black;
+    cursor:default;
+}
+
+.modal_katalog div a:hover {
+    background-color: rgba(255, 184, 184, 0.39);
+}
+
+.modal_katalog div a:active {
+    background-color: rgba(230, 66, 66, 0.486);
+}
+
+
+
+/*--------------------------------------------------------------*/
+/*--------------------------------------------------------------*/
+
+@media (min-width: 2000px) {
+    body { 
+        zoom: 2;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1999px) {
+    body { 
+        zoom: 1.2;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1439px) {
+    body { 
+        zoom: 1;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+
+}
+
+@media (max-width: 320px) {
+
+}
