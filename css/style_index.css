@@ -1013,11 +1013,15 @@ footer {
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
-
+    body { 
+        zoom: 73%;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 479px) {
-
+    body { 
+        zoom: 73%;
+    }
 }
 
 @media (max-width: 320px) {
