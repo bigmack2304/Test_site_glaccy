@@ -72,7 +72,7 @@
 }
 
 /*-------------тело саита------------------------------------------------*/
-body {
+body, body.dark-theme {
     box-sizing: border-box;
     background-color: rgb(133, 158, 144);     /* цвет фона (устанавливается скриптом) */
     background-repeat: no-repeat;               /* отключить повторения */
