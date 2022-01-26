@@ -1,5 +1,7 @@
 
 
+window.onscroll = function() { upd_modal_map() };
+
 function start() {
     upd_fon();          // обновление фона
     upd_btn_korzina();  // обновление наименования корзины
@@ -37,6 +39,52 @@ function upd_fon() {
         }
       }
     }
+}
+
+//////////////////////////////////////////////////////////////////////////
+// появление модального окна в зависимости от положения карты
+
+let div_map_pos = document.getElementsByClassName('map');                   // карта
+let div_mapadress_modal = document.getElementsByClassName('map_addrerss');  // модальное окно на карте
+
+function upd_modal_map() {
+ if (is_obj_on_vieport(div_map_pos[0], 0.95)) {
+  div_mapadress_modal[0].style.display = 'block';
+  div_mapadress_modal[0].style.animationDuration = "0.3s";
+  div_mapadress_modal[0].style.animationName = "move_r";
+ } else {
+  div_mapadress_modal[0].style.display = 'none';
+ }
+}
+
+/*
+  Функция позволяет определить находится ли обьект в области видимости экрана
+  На вход принимается сам обьект и гистерезис 0.00 - 1.00
+  Возвращает true\false в зависимости от того виден обьект или нет.
+  Гистерезис это % от размера обьекта которой будет выден на экране, после
+  которого обьект будет считатся видимым.
+*/
+function is_obj_on_vieport(DOM_object, hysteresys = 0) {
+  let pos_scrol = window.scrollY;                                 // позиция скролла
+  let h_vieport = document.documentElement.clientHeight;          // высота видимой части окна
+  let pos_obj_botom = DOM_object.getBoundingClientRect().bottom;  // расстояние от нижней точки обьекта до верха документа
+  let pos_obj_top = DOM_object.getBoundingClientRect().top;       // расстояние от верхней точки обьекта до верха документа
+ 
+  let h_coef = (pos_obj_botom - pos_obj_top)*hysteresys;
+  //console.clear();
+  //console.log(pos_obj_botom - pos_obj_top);   // так можно узнать высоту элемента
+  //console.log(h_vieport);                     // так можно узнать высоту окна
+  //console.log(pos_scrol);                     // так можно узнать позицию скролла
+  
+  //console.log(pos_scrol + h_vieport);         // позиция нижней границы вьюпорта относительно DOM
+  //console.log(h_vieport - pos_obj_top);       // получаем расстояние от верхней границы обьекта до низа вьюпорта
+  //console.log( pos_obj_botom );               // выводим расстояние от нижней границы обьекта до верха вьюпорта
+
+  if ((h_vieport - pos_obj_top) > (0 + h_coef) && pos_obj_botom > (0 + h_coef)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /*

@@ -20,28 +20,6 @@
     }
 }
 
-/*--------------------------------------------------------------------*/
-
-@keyframes fon_move_start {
-    0% {
-        transform: translateX(0px);
-    }
-
-    100% {
-        transform: translateX(-1100px);
-    }
-}
-
-@keyframes fon_move_end {
-    0% {
-        transform: translateX(1100px);
-    }
-
-    100% {
-        transform: translateX(0px);
-    }
-}
-
 
 /*-------------базовые стили-----------------------------*/
 
@@ -613,6 +591,8 @@ main {
     right: 0px;
     border-radius: 20px;
     box-shadow: 0px 1px 16px 4px #444343;
+    display: none;                                  
+    animation-name: none; 
 }
 
 .map_addrerss p {
