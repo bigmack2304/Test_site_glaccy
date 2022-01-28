@@ -51,7 +51,7 @@ let div_mapadress_modal = document.getElementsByClassName('map_addrerss');  // �
 let DOM_body = document.querySelector('body');                              // обьект body из html
 
 function upd_modal_map() {
- if (is_obj_on_vieport(div_map_pos[0], 0.80)) {
+ if (is_obj_on_vieport(div_map_pos[0], 0.40)) {
   div_mapadress_modal[0].style.opacity = "100%";
  } else {
   div_mapadress_modal[0].style.opacity = "0%";
