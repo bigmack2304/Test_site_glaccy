@@ -588,11 +588,10 @@ main {
     background-color: #f8f7f4;
     max-width: 300px;
     position: absolute;
-    right: 0px;
+    right: 20px;
     border-radius: 20px;
     box-shadow: 0px 1px 16px 4px #444343;
-    display: none;                                  
-    animation-name: none; 
+    opacity: 100%;
 }
 
 .map_addrerss p {
@@ -992,18 +991,20 @@ footer {
 
 }
 
-@media (min-width: 480px) and (max-width: 767px) {
+@media (min-width: 580px) and (max-width: 767px) {
     body { 
-        zoom: 73%;
+        zoom: 0.73;
     }
 }
 
-@media (min-width: 320px) and (max-width: 479px) {
+@media (min-width: 370px) and (max-width: 579px) {
     body { 
-        zoom: 48%;
+        zoom: 0.47;
     }
 }
 
-@media (max-width: 320px) {
-
+@media (max-width: 369px) {
+    body { 
+        zoom: 0.35;
+    }
 }

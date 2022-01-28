@@ -4,8 +4,8 @@
 
 //window.onscroll = () => muse_wheel();   // срабатывает при скролле окна
 //window.onclick = () => muse_clik();     // срабатывает при клике мышкой (левой кнопкой)
-window.onscroll = function() { muse_wheel() };
-window.onclick = function() { muse_clik() };
+//window.onscroll = function() { muse_wheel() };
+//window.onclick = function() { muse_clik() };
 
 var v_btn_katalog = document.getElementsByClassName('btn_katalog');
 var wnd_katalog = document.getElementsByClassName('modal_katalog'); 
@@ -37,7 +37,7 @@ function upd_btn_korzina() {
   if (main_korzina.length == 0) {                                                 // если массив корзины пуст
     document.getElementsByClassName('btn_korzina_txt')[0].innerText = "Пусто";    // название кнопки
     document.getElementsByClassName('korz_items_sum')[0].innerText = "0";         // общая сумма покупок
-	document.getElementsByClassName('modal_korzina_container')[0].innerHTML = ""; // отчищаем содержимое списка
+	  document.getElementsByClassName('modal_korzina_container')[0].innerHTML = ""; // отчищаем содержимое списка
   } else {                                                                        // если в массиве корзины что-то есть
 	  
 	document.getElementsByClassName('modal_korzina_container')[0].innerHTML = ""; // отчищаем весь список покупок в окне   
@@ -96,7 +96,7 @@ function muse_wheel() {
   if (korzina_open) {               
     close_modal_wind(wnd_korzina);
     korzina_open = false;
-  }
+  } 
 }
 
 ///////////////////////////////////////////////////////////////////////////
